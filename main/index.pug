@@ -1,0 +1,173 @@
+html
+    head
+        title Test task
+        link(href='assets/stylesheets/main.css', rel='stylesheet')
+        link(href='/assets/stylesheets/formvalidation/theme-default.min.css', rel='stylesheet')
+    body
+        main
+            section
+                div(class="payment")
+                    h3 Thank you for choosing to subscribe to PDFfiller services!
+                    form(class="form toggle-disabled")
+                        div(class="form__user-info")
+                            div(class="form__cards-mobile")
+                                img(src="assets/images/visa_big.png")
+                                img(src="assets/images/mastercard_big.png")
+                                img(src="assets/images/discover_big.png")
+                                img(src="assets/images/americanexpress_big.png")
+                            div(class="form-group")
+                                label(
+                                    for="first_name"
+                                    class="form-group__label"
+                                ) Cardholder Name
+                                span(
+                                    data-attr="Required field. Can’t be empty"
+                                    class="tooltip tooltip__first-name"
+                                )
+                                input(
+                                    id="first_name"
+                                    class="form-group__input"
+                                    type="text"
+                                    placeholder="First name"
+                                    required
+                                )
+                                span(
+                                    data-attr="Required field. Can’t be empty"
+                                    class="tooltip tooltip__last-name"
+                                )
+                                input(
+                                    id="last_name"
+                                    class="form-group__input"
+                                    type="text"
+                                    placeholder="Last name"
+                                    required
+                                )
+                            div(class="form-group")
+                                label(
+                                    for="card_number"
+                                    class="form-group__label"
+                                ) Card Number
+                                span(
+                                    data-attr="You have to enter valid credit card number"
+                                    class="tooltip tooltip__card-number"
+                                )
+                                input(
+                                    id="card_number"
+                                    class="form-group__input"
+                                    type="text"
+                                    placeholder="•••• •••• •••• ••••"
+                                    required
+                                )
+                                div(class="form-group__cards")
+                                    img(src="assets/images/visa.png")
+                                    img(src="assets/images/mastercard.png")
+                                    img(src="assets/images/discover.png")
+                                    img(src="assets/images/americanexpress.png")
+                            div(class="form-group")
+                                label(
+                                    for="exp_month"
+                                    class="form-group__label label__exp-date"
+                                ) Exp. Date
+                                label(
+                                for="cvv_cvc"
+                                class="form-group__label label__cvv-cvc--mobile"
+                                ) CVV/CVC
+                                - var months = 1;
+                                - var mm = 'MM';
+                                    span(
+                                        data-attr="You have to enter valid credit card month"
+                                        class="tooltip tooltip__exp-month"
+                                    )
+                                    select(
+                                        id="exp_month"
+                                        class="exp_date"
+                                        required
+                                    )
+                                        option(
+                                            value=""
+                                            hidden
+                                        )= mm
+                                        while months <= 12
+                                            option(value=months)= months++
+                                span(class="slash") /
+                                - var years = 2018;
+                                - var yyyy = 'YYYY';
+                                    span(
+                                        data-attr="You have to enter valid credit card year"
+                                        class="tooltip tooltip__exp-year"
+                                    )
+                                    select(
+                                        id="exp_year"
+                                        class="exp_date"
+                                        required
+                                    )
+                                        option(
+                                            value=""
+                                            hidden
+                                        )= yyyy
+                                        while years <= 2038
+                                            option(value=years)= years++
+                                label(
+                                    for="cvv_cvc"
+                                    class="form-group__label label__cvv-cvc"
+                                ) CVV/CVC
+                                span(
+                                    data-attr="You have to enter valid credit card CVV/CVC"
+                                    class="tooltip tooltip__cvv-cvc"
+                                )
+                                div(class="cvv-info")
+                                    input(
+                                        id="cvv_cvc"
+                                        class="form-group__input"
+                                        type="text"
+                                        placeholder="XXXX"
+                                        required
+                                    )
+                                    div(
+                                        class="cvv-info__window"
+                                    )
+                                        div(class="cvv-info__card cvv-info__card--1")
+                                            img(src="assets/images/card_1.png")
+                                            span Visa, MasterCard
+                                            p 3-Digit Verification Number
+                                        div(class="cvv-info__card cvv-info__card--2")
+                                            img(src="assets/images/card_2.png")
+                                            span American Express
+                                            p 4-Digit Verification Number
+                                    div(
+                                        id="info_icon"
+                                        class="cvv-info__icon"
+                                    )
+                            div(class="form-group")
+                                label(
+                                    for="code"
+                                    class="form-group__label"
+                                ) Zip/Postal code
+                                span(
+                                    data-attr="Required field. Can’t be empty"
+                                    class="tooltip tooltip__code"
+                                )
+                                input(
+                                    id="code"
+                                    class="form-group__input"
+                                    type="text"
+                                    placeholder="01001"
+                                    required
+                                )
+                            div(class="form-group paypal-bottom")
+                                div(class="paypal-tablet")
+                                    div(class="paypal-tablet__text") Or pay with Paypal
+                                    div(class="paypal-tablet__btn")
+                                        img(src="assets/images/paypal_small.png")
+                            div(class="form-group")
+                                button(class="btn_submit") Start My Subscription for $19.99/mo.
+
+                        div(class="form__pay-pal paypal-right")
+                            div(class="paypal-right__text") Or pay with Paypal
+                            div(class="paypal-right__btn")
+                                img(src="assets/images/paypal.png")
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+        script(src='./assets/javascripts/formvalidation/jquery.form-validator.min.js')
+        script(src='./assets/javascripts/script.js')
+
